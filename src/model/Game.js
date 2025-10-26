@@ -1,4 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
+import OutputView from '../view/OutputView';
 
 class Game {
     #carList;
@@ -16,13 +17,6 @@ class Game {
      */
     playRound() {
         this.#carList.forEach(car => car.move());
-    }
-
-    /**
-     * 현재 모든 자동차의 위치를 시각적으로 출력하는 메서드
-     */
-    printCurrentPosition() {
-        this.#carList.map(car => MissionUtils.Console.print(`${car.getName()} : ${car.getPosition()}`))
     }
 
     /**
@@ -45,7 +39,8 @@ class Game {
             this.printCurrentPosition();
         }
         const winners = this.getWinners();
-        MissionUtils.Console.print(`최종 우승자 : ${winners}`)
+        
+        OutputView.printWinners(winners);
     }
     
 }
