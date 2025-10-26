@@ -12,6 +12,7 @@ class GameController {
         const roundsInput = await InputView.readRounds();
 
         // TODO 3: 입력받은 데이터를 통해 Model의 Game 인스턴스 생성
+        
 
         // TODO 4: View를 통해 게임의 시작을 알리는 문구 출력
 
