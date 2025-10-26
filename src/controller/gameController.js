@@ -1,3 +1,5 @@
+import InputView from '../view/InputView';
+
 class GameController {
     #game;
 
@@ -6,9 +8,8 @@ class GameController {
      */
     async play() {
 
-        // TODO 1: View를 통해 사용자로부터 자동차 입력 받기
-
-        // TODO 2: View를 통해 사용자로부터 시도할 횟수 입력 받기
+        const carListInput = await InputView.readCarNames();
+        const roundsInput = await InputView.readRounds();
 
         // TODO 3: 입력받은 데이터를 통해 Model의 Game 인스턴스 생성
 

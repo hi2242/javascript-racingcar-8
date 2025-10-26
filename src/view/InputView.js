@@ -23,3 +23,5 @@ class InputView {
     return input;
   }
 }
+
+export default InputView;
