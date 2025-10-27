@@ -1,6 +1,6 @@
-import Car from '../src/model/Car';
+import Car from '../src/model/Car.js';
 import { mockRandoms } from '../src/utils/mockRandoms.js';
-import OutputView from '../src/view/OutputView';
+import OutputView from '../src/view/OutputView.js';
 import { getLogSpy } from '../src/utils/getLogSpy.js';
 
 describe('OutputputView 클래스 테스트', () => {

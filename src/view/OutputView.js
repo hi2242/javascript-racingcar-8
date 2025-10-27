@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import { GAME_PARAMETER, OUTPUT_MESSAGE } from '../constants/constants';
+import { GAME_PARAMETER, OUTPUT_MESSAGE } from '../constants/constants.js';
 
 class OutputView {
   /**

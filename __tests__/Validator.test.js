@@ -1,5 +1,5 @@
 import Validator from '../src/utils/Validator.js';
-import { ERROR_MESSAGES } from '../src/constants/constants';
+import { ERROR_MESSAGES } from '../src/constants/constants.js';
 
 describe('Validator 테스트', () => {
 

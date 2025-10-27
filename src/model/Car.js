@@ -1,5 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import { GAME_PARAMETER } from '../constants/constants';
+import { GAME_PARAMETER } from '../constants/constants.js';
 
 class Car {
     #name;
