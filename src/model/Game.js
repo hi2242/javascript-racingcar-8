@@ -37,7 +37,7 @@ class Game {
         MissionUtils.Console.print('실행 결과');
         for (let i = 0; i < rounds; i++) {
             this.playRound();
-            OutputView.printCurrentPosition();
+            OutputView.printCurrentPosition(this.#carList);
         }     
     }
     
