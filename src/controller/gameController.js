@@ -17,9 +17,9 @@ class GameController {
 
         OutputView.printGameStart();
 
-        this.playGame(roundsInput);
+        this.#game.playGame(roundsInput);
 
-        const winners = this.getWinners();
+        const winners = this.#game.getWinners();
 
         OutputView.printWinners(winners);
     }
