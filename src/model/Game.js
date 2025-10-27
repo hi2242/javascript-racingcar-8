@@ -1,6 +1,6 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
-import OutputView from '../view/OutputView';
-import Car from './Car';
+import OutputView from '../view/OutputView.js';
+import Car from './Car.js';
 
 class Game {
     #carList;
