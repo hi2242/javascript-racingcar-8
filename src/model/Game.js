@@ -17,7 +17,7 @@ class Game {
      * 각 자동차 별로 이동 여부를 결정하는 라운드를 진행하는 메서드
      */
     playRound() {
-        this.#carList.forEach(car => car.move());
+        this.#carList.forEach(car => car.move(this.#pickNumber()));
     }
 
     /**
@@ -41,6 +41,9 @@ class Game {
         }     
     }
     
+    #pickNumber() {
+        return MissionUtils.Random.pickNumberInRange(0, 9);
+    }
 }
 
 export default Game;
