@@ -25,8 +25,8 @@ class Game {
      * @return {string[]} 우승 자동차 이름 리스트
      */
     getWinners() {
-        const bestScore = Math.max(this.#carList);
-        return this.#carList.map(car => car.length === bestScore);
+        const bestScore = Math.max(this.#carList.map(car => car.getPosition()));
+        return this.#carList.map(car => car.getPosition() === bestScore);
     }
 
     /**
