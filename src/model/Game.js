@@ -38,10 +38,7 @@ class Game {
         for (let i = 0; i < rounds; i++) {
             this.playRound();
             this.printCurrentPosition();
-        }
-        const winners = this.getWinners();
-        
-        OutputView.printWinners(winners);
+        }     
     }
     
 }

@@ -1,5 +1,6 @@
-import InputView from '../view/InputView';
-import Game from '../model/Game';
+import InputView from '../view/InputView.js';
+import OutputView from '../view/OutputView.js';
+import Game from '../model/Game.js';
 
 class GameController {
     #game;
@@ -14,11 +15,14 @@ class GameController {
 
         this.#game = new Game(carListInput);
 
-        // TODO 4: View를 통해 게임의 시작을 알리는 문구 출력
+        OutputView.printGameStart();
 
-        // TODO 5: Model의 getWinners()를 통해 최종 우승자 리스트를 저장
+        this.playGame(roundsInput);
 
-        // TODO 6: View를 통해 최종 우승자 정보 출력
+        const winners = this.getWinners();
 
+        OutputView.printWinners(winners);
     }
 }
+
+export default GameController;
