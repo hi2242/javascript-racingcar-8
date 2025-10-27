@@ -1,4 +1,6 @@
+import { MissionUtils } from '@woowacourse/mission-utils';
 import { GAME_PARAMETER } from '../constants/constants';
+
 class Car {
     #name;
     #position;
@@ -14,9 +16,9 @@ class Car {
 
     /**
      * 랜덤으로 뽑힌 값을 받아서 4 이상이면 전진시키는 메서드
-     * @param {number} value
      */
-    move(value) {
+    move() {
+        const value = this.#pickNumber();
         if (value >= GAME_PARAMETER.MOVE_LIMITATION) {
             this.#position++;
         }
@@ -36,6 +38,10 @@ class Car {
      */
     getPosition() {
         return this.#position;
+    }
+
+    #pickNumber() {
+        return MissionUtils.Random.pickNumberInRange(GAME_PARAMETER.MIN_RANDOM_NUMBER, GAME_PARAMETER.MAX_RANDOM_NUMBER);
     }
 }
 
