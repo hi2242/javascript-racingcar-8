@@ -14,7 +14,7 @@ class OutputView {
    */
   static printCurrentPosition(carList) {
     carList.map((car) =>
-      MissionUtils.Console.print(`${car.getName()} : ${'-'.repeat(car.getPosition())}`)
+      MissionUtils.Console.print(`${car.getName()} : ${'-'.repeat(car.getPosition())}\n`)
     );
   }
 
@@ -23,7 +23,7 @@ class OutputView {
    * @param {string[]} winnerList - 우승 자동차 이름 리스트
    */
   static printWinners(winnerList) {
-    MissionUtils.Console.print(winnerList.join(", "));
+    MissionUtils.Console.print(`최종 우승자 : ${winnerList.join(", ")}`);
   }
 }
 
