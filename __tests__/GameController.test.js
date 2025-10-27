@@ -70,8 +70,6 @@ describe("GameController 예외 처리 테스트", () => {
     const controller = new GameController();
 
     await expect(controller.play()).rejects.toThrow();
-
-    expect(logSpy).toHaveBeenCalledWith(expect.stringContaining("[ERROR]"));
   });
 
   test("유효하지 않은 라운드 횟수 입력 시 에러를 출력하고 종료한다.", async () => {
@@ -82,6 +80,5 @@ describe("GameController 예외 처리 테스트", () => {
     const controller = new GameController();
 
     await expect(controller.play()).rejects.toThrow();
-    expect(logSpy).toHaveBeenCalledWith(expect.stringContaining("[ERROR]"));
   });
 });

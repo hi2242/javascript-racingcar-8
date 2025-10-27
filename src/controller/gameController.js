@@ -9,28 +9,23 @@ class GameController {
   /**
    * 게임 전체를 제어할 메인 메서드
    */
-  async play() {
-    try {
-      const carListInput = await InputView.readCarNames();
-      Validator.validateCarList(carListInput);
+async play() {
+    const carListInput = await InputView.readCarNames();
+    Validator.validateCarList(carListInput);
 
-      const roundsInput = await InputView.readRounds();
-      Validator.validateRounds(roundsInput);
+    const roundsInput = await InputView.readRounds();
+    Validator.validateRounds(roundsInput);
 
-      this.#game = new Game(carListInput);
+    this.#game = new Game(carListInput);
 
-      OutputView.printGameStart();
+    OutputView.printGameStart();
 
-      this.#game.playGame(roundsInput);
+    this.#game.playGame(roundsInput);
 
-      const winners = this.#game.getWinners();
+    const winners = this.#game.getWinners();
 
-      OutputView.printWinners(winners);
-    } catch (error) {
-        OutputView.printError(error.message);
-        throw error;
-    }
-  }
+    OutputView.printWinners(winners);
+  }
 }
 
 export default GameController;
