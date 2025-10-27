@@ -1,5 +1,14 @@
 import InputView from '../src/view/InputView.js';
-import { mockQuestions } from '../src/utils/mockQuestions.js';
+import { MissionUtils } from '@woowacourse/mission-utils';
+
+const mockQuestions = (inputs) => {
+  MissionUtils.Console.readLineAsync = jest.fn();
+
+  MissionUtils.Console.readLineAsync.mockImplementation(() => {
+    const input = inputs.shift();
+    return Promise.resolve(input);
+  });
+};
 
 describe('InputView 클래스 테스트', () => {
   test('readCarNames: 자동차 이름을 입력받는다.', async () => {

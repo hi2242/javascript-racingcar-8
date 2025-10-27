@@ -1,5 +1,14 @@
 import Game from '../src/model/Game.js';
-import { mockRandoms } from '../src/utils/mockRandoms.js';
+import { MissionUtils } from '@woowacourse/mission-utils';
+
+const mockRandoms = (numbers) => {
+  MissionUtils.Random.pickNumberInRange = jest.fn();
+
+  numbers.reduce((acc, number) => {
+    return acc.mockReturnValueOnce(number);
+  }, MissionUtils.Random.pickNumberInRange);
+};
+
 
 describe('Game 클래스 테스트', () => {
 

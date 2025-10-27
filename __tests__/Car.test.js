@@ -1,5 +1,13 @@
 import Car from '../src/model/Car.js';
-import { mockRandoms } from '../src/utils/mockRandoms.js';
+import { MissionUtils } from '@woowacourse/mission-utils';
+
+const mockRandoms = (numbers) => {
+  MissionUtils.Random.pickNumberInRange = jest.fn();
+
+  numbers.reduce((acc, number) => {
+    return acc.mockReturnValueOnce(number);
+  }, MissionUtils.Random.pickNumberInRange);
+};
 
 describe('Car 클래스 테스트', () => {
   test('자동차는 이름을 인자로 받아서 Car 인스턴스를 생성한다.', () => {
