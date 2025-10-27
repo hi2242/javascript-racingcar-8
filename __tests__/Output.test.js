@@ -1,13 +1,7 @@
-import { MissionUtils } from '@woowacourse/mission-utils';
 import Car from '../src/model/Car';
 import { mockRandoms } from '../src/utils/mockRandoms.js';
 import OutputView from '../src/view/OutputView';
-
-const getLogSpy = () => {
-  const logSpy = jest.spyOn(MissionUtils.Console, "print");
-  logSpy.mockClear();
-  return logSpy;
-};
+import { getLogSpy } from '../src/utils/getLogSpy.js';
 
 describe('OutputputView 클래스 테스트', () => {
   test('printGameStart: 시작 문구를 출력한다.', async () => {
