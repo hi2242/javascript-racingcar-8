@@ -10,7 +10,7 @@ class Game {
      * @param {string[]} carNames 
      */
     constructor(carNames) {
-        this.#carList = carNames.map(name => new Car(name));
+        this.#carList = carNames.split(',').map(name => new Car(name));
     }
 
     /**
