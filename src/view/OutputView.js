@@ -14,7 +14,7 @@ class OutputView {
    */
   static printCurrentPosition(carList) {
     carList.map((car) =>
-      MissionUtils.Console.print(`${car.getName()} : ${car.getPosition()}`)
+      MissionUtils.Console.print(`${car.getName()} : ${'-'.repeat(car.getPosition())}`)
     );
   }
 
