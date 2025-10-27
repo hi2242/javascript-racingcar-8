@@ -27,7 +27,7 @@ class Game {
     getWinners() {
         const positions = this.#carList.map(car => car.getPosition());
         const bestScore = Math.max(...positions)
-        return this.#carList.map(car => car.getPosition() === bestScore);
+        return this.#carList.filter(car => car.getPosition() === bestScore).map(winner => winner.getName());
     }
 
     /**
