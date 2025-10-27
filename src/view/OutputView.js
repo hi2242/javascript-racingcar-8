@@ -25,6 +25,10 @@ class OutputView {
   static printWinners(winnerList) {
     MissionUtils.Console.print(`최종 우승자 : ${winnerList.join(", ")}`);
   }
+
+  static printError(message) {
+    MissionUtils.Console.lprint(message);
+  }
 }
 
 export default OutputView;
