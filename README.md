@@ -232,7 +232,8 @@ javascript-racingcar-8
 ## 커밋 목록 (위에서부터 최신순)
 | 커밋 해시 | 타입 | 메시지 |
 |------------|--------|--------|
-|   최신   | refactor | 모킹 함수 각 파일마다 구현 |
+|   최신   | refactor | 임시 커밋 |
+| 9b263ad | refactor | 모킹 함수 각 파일마다 구현 |
 | 36f7d06 | docs | README 보완 |
 | f5bdbc1 | fix | 출력 형식에 맞도록 수정 |
 | 423b963 | fix | import 경로 수정 |
