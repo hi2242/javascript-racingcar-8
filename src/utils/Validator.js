@@ -1,7 +1,30 @@
 const Validator = {
-    // TODO 1 : 입력한 자동차가 없는 경우
+    validateCarList(input) {
+        if (!input) {
+            throw new Error('[ERROR] 경주할 자동차가 존재하지 않습니다.');
+        }
+        const names = input.split(',');
 
-    // TODO 2 : 자동차의 이름이 5자가 초과한 경우
+        if (names.some(name => name.length > 5)) {
+            throw new Error('[ERROR] 긴 이름의 자동차는 허용되지 않습니다.');
+        }
+    },
 
-    // TODO 3 : 시도할 횟수가 음수나 숫자가 아닌 값을 입력한 경우
+    validateRounds(input) {
+        if (!input) {
+            throw new Error('[ERROR] 올바르지 않은 시도 횟수입니다.');
+        }
+        
+        const rounds = Number(input);
+
+        if (isNaN(rounds)) {
+            throw new Error('[ERROR] 올바르지 않은 시도 횟수입니다.');
+        }
+
+        if (rounds < 0) {
+            throw new Error('[ERROR] 올바르지 않은 시도 횟수입니다.');
+        }
+    }
 }
+
+export default Validator;
