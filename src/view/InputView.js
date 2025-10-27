@@ -1,4 +1,5 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
+import { INPUT_MESSAGE } from '../constants/constants';
 
 class InputView {
   /**
@@ -7,7 +8,7 @@ class InputView {
    */
   static async readCarNames() {
     const input = await MissionUtils.Console.readLineAsync(
-      "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)\n"
+      INPUT_MESSAGE.CAR_LIST_MESSAGE
     );
     return input;
   }
@@ -18,7 +19,7 @@ class InputView {
    */
   static async readRounds() {
     const input = await MissionUtils.Console.readLineAsync(
-      "시도할 횟수는 몇 회인가요?\n"
+      INPUT_MESSAGE.ROUNDS_MESSAGE
     );
     return input;
   }

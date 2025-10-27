@@ -1,7 +1,7 @@
-import InputView from "../view/InputView.js";
-import OutputView from "../view/OutputView.js";
-import Game from "../model/Game.js";
-import Validator from "../utils/Validator.js";
+import InputView from '../view/InputView.js';
+import OutputView from '../view/OutputView.js';
+import Game from '../model/Game.js';
+import Validator from '../utils/Validator.js';
 
 class GameController {
   #game;

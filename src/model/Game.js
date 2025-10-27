@@ -1,6 +1,7 @@
 import { MissionUtils } from '@woowacourse/mission-utils';
 import OutputView from '../view/OutputView.js';
 import Car from './Car.js';
+import { GAME_PARAMETER } from '../constants/constants.js';
 
 class Game {
     #carList;
@@ -10,7 +11,7 @@ class Game {
      * @param {string[]} carNames 
      */
     constructor(carNames) {
-        this.#carList = carNames.split(',').map(name => new Car(name));
+        this.#carList = carNames.split(GAME_PARAMETER.CAR_LIST_DELIMITER).map(name => new Car(name));
     }
 
     /**
@@ -42,7 +43,7 @@ class Game {
     }
     
     #pickNumber() {
-        return MissionUtils.Random.pickNumberInRange(0, 9);
+        return MissionUtils.Random.pickNumberInRange(GAME_PARAMETER.MIN_RANDOM_NUMBER, GAME_PARAMETER.MAX_RANDOM_NUMBER);
     }
 }
 

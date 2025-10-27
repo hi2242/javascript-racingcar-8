@@ -1,11 +1,12 @@
-import { MissionUtils } from "@woowacourse/mission-utils";
+import { MissionUtils } from '@woowacourse/mission-utils';
+import { GAME_PARAMETER, OUTPUT_MESSAGE } from '../constants/constants';
 
 class OutputView {
   /**
    * 게임 시작 시 실행 결과라는 문구를 출력해줄 메서드
    */
   static printGameStart() {
-    MissionUtils.Console.print("\n실행 결과");
+    MissionUtils.Console.print(OUTPUT_MESSAGE.START_MESSAGE);
   }
 
   /**
@@ -15,7 +16,7 @@ class OutputView {
   static printCurrentPosition(carList) {
     carList.map((car) =>
       MissionUtils.Console.print(
-        `${car.getName()} : ${"-".repeat(car.getPosition())}\n`
+        `${car.getName()} : ${OUTPUT_MESSAGE.POSITION_BAR.repeat(car.getPosition())}\n`
       )
     );
   }
@@ -25,7 +26,7 @@ class OutputView {
    * @param {string[]} winnerList - 우승 자동차 이름 리스트
    */
   static printWinners(winnerList) {
-    MissionUtils.Console.print(`최종 우승자 : ${winnerList.join(", ")}`);
+    MissionUtils.Console.print(`${OUTPUT_MESSAGE.FINISH_MESSAGE}${winnerList.join(GAME_PARAMETER.WINNER_LIST_DELIMITER)}`);
   }
 
   static printError(message) {

@@ -1,3 +1,4 @@
+import { GAME_PARAMETER } from '../constants/constants';
 class Car {
     #name;
     #position;
@@ -8,7 +9,7 @@ class Car {
      */
     constructor(name) {
         this.#name = name;
-        this.#position = 0;
+        this.#position = GAME_PARAMETER.START_POSITION;
     }
 
     /**
@@ -16,7 +17,7 @@ class Car {
      * @param {number} value
      */
     move(value) {
-        if (value >= 4) {
+        if (value >= GAME_PARAMETER.MOVE_LIMITATION) {
             this.#position++;
         }
     }
